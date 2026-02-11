@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <h1>AIどっちが優秀？</h1>
+  <h3>このサイトはGeminiとchatGPTを比較するサイトです</h3>
+  <h4>初めに</h4>
+  <h5>2つのAIにURLのリンクを張りたいと聞いてみた</h5>
+  <ul>
+    <li><a href="https://gemini.google.com/" target="_blank">Gemini（ジェミニ）を開く</a></li>
+    <li><a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">
+  ChatGPTはこちら
+</a>
+</li>
+  </ul>
+  <p>Gemini（ジェミニ）は<span>「…を開く」</span></p>
+  <p>chatGPTは<span>「…はこちら」</span>と答えた。</p>
+  <h5>同じ質問でも個性が出る</h5>
+  <h4>二つのAIに[htmlでおみくじを作って]と質問した</h4>
+<ul>
+  <li>Geminiの場合</li>
+</ul>
+<h1>今日の運勢</h1>
+    <div id="resultGemini">？</div>
+<button class="buttonGemini" onclick="drawOmikujiGemini()">おみくじを引く</button>
+</div>
+
+<script>
+    
+    function drawOmikujiGemini() {
+        const resultsGemini = ["大吉", "中吉", "小吉", "吉", "末吉", "凶"];
+        const randomIndex = Math.floor(Math.random() * resultsGemini.length);
+        const resultText = resultsGemini[randomIndex];
+        const resultElement = document.getElementById("resultGemini");
+        resultElement.innerText = resultText;
+
+        if (resultText === "大吉") {
+            resultElement.style.color = "#f1c40f";
+        } else {
+            resultElement.style.color = "#e74c3c";
+        }
+    }
+</script>
+<ul>
+  <li>chatGPTの場合</li>
+</ul>
+
+ <div class="omikujigpt">
+    <h1>🎍 今日のおみくじ </h1>
+
+    <div id="omikujigpt-result">ここに結果が出るよ</div>
+
+    <button id="omikujigpt-button">おみくじを引く</button>
+  </div>
+
+  <script src="reportGPT.js"></script>
+  <h5>GeminiはHTMLとCSSのファイルのみでシンプルな形になった<p>一方でchatGPTはHTML、CSS、jsも利用し、ど真ん中を陣取る派手なものになった</p></h5>
+
+  <h3>番外</h3>
+  <h4>私が作った場合</h4>
+    <h1>おみくじ</h1>
+    <p>名前を入れてください</p>
+    <input type="text" id="user-name" size="40" maxlength="20">
+    <button id="assessment">くじを引く</button>
+        <div id="result-area"></div>
+        <div id="tweet-area">
+          <a href="https://twitter.com/intent/tweet?button_hashtag=今日の運勢&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-text="今日の運勢" data-show-count="false">Tweet #今日の運勢</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <script src="reportself.js"></script>
+    <p>あなたのいいところ診断を応用したものです。（凶は入ってないよ）</p>
+
+    <h2>感想</h2>
+   <P>二つを比べてみて、Geminiはシンプル、chatGPTはGeminiよりひと工夫するように感じた。
+    プログラムのエラーを直すときもchatGPTのほうが個人的にはわかりやすく教えてくれたように感じた。
+   </P> 
+   <h1>結論</h1>
+   <h3>私はChatGPTのほうがいい！</h3>
+</body>
+</html>
+
